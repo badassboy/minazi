@@ -24,104 +24,85 @@ include_once 'inc/carter.php';
 
 
     <!-- Carousel Start -->
-        <?php
-
-        $db_host = "localhost";
-
-        $db_user = "root";
-        $db_password = "";
-        $db_name= "minazy";
-
-        $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
-        if (!$conn) {
-            die("connection failed".mysqli_connect_error());
-        }
-
-        // sql fetch query
-        $sql = "SELECT title, images, description FROM intro";
-        $result = mysqli_query($conn,$sql);
-
-        if (mysqli_num_rows($result)>0) {
-
-        while($row = mysqli_fetch_assoc($result)){?>
-
-       
-
-
-
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
             <div class="col-lg-12">
                 <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
                     <ol class="carousel-indicators">
 
-                       
-                        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
                         <li data-target="#header-carousel" data-slide-to="1"></li>
                         <li data-target="#header-carousel" data-slide-to="2"></li>
                     </ol>
+
                     <div class="carousel-inner">
 
-                    
 
-                       
+        <?php
 
-                
-              <div class="carousel-item position-relative active" style="height: 430px;">
+        $db_host = "localhost";
+        $db_user = "root";
+        $db_password = "";
+        $db_name= "minazy";
+        $count_items=0;
 
-            
+        $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
+        if (!$conn) {
+            die("connection failed".mysqli_connect_error());
+        }
 
+       
 
-             
+        // sql fetch query
+        $sql = "SELECT title, images , description FROM intro ";
+        $result = mysqli_query($conn,$sql);
 
+        if (mysqli_num_rows($result)>0) {
+            // echo "yes";
 
-            <img class="position-absolute w-100 h-100" src="../admin/<?php echo $row['images']; ?>" style="object-fit: cover;">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                <div class="p-3" style="max-width: 700px;">
-                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><?php echo $row['title']; ?></h1>
-                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">
-                        <?php echo $row['description']; ?>
-                    </p>
-                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="products.php">Shop Now</a>
+        while($row = mysqli_fetch_assoc($result))
+        {
+
+            $path = '../admin/'.$row['images'];
+            // var_dump($path);
+            ?>
+                <div class="carousel-item position-relative <?php echo ($count_items==0) ? 'active':'' ?> " style="height: 430px;">
+
+                    <img class="position-absolute w-100 h-100" src="<?php echo $path; ?>" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">
+                                    <?php echo $row['title']; ?>
+                                </h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn"> <?php echo $row['description']; ?>
+                                </p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="products.php">Shop Now</a>
+                            </div>
+                        </div>
                 </div>
-            </div>
 
+            <?php
+        
+            $count_items++;
             
-
-
-
-        </div>
-
-         <?php }?>
-
-
-
-                         
-
-                      
-
-                       
-
-
-
-
-                       
-
-                        <?php 
-
-                            }
+            }
+            }else {
+                            echo "no";
+                        }
 
                             mysqli_close($conn);
 
-
-
                         ?>
 
-                    </div>
+
+
+             </div>
                 </div>
             </div>
         </div>
     </div>
+
+                   
     <!-- Carousel End -->
 
 
