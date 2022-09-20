@@ -18,7 +18,7 @@ if(isset($_POST['in-prod'])){
 			$path = "assets/img/products/";
 			$new_name = $gt;
 			$ext_path = $path.$new_name.'.'.$extension;
-			move_uploaded_file( $_FILES['ft_photo']['tmp_name'], '../en/'.$ext_path );
+			move_uploaded_file( $_FILES['ft_photo']['tmp_name'], '../en/'.$ext_path);
 		}else{ $_SESSION['error-me'] = '<strong>Sorry!</strong> Image Upload Failed!';}
 	}
 

@@ -4,7 +4,15 @@ include_once 'inc/carter.php';
 <html lang="en">
 
 <head>
-    <?php include_once 'views/metadata.php' ?>
+    <?php
+
+
+
+     include_once 'views/metadata.php'
+
+
+
+      ?>
 
     <?php include_once 'views/links.php' ?>
 </head>
@@ -39,6 +47,74 @@ include_once 'inc/carter.php';
 
 
         <?php
+
+       
+
+
+        // logging of ipaddress
+        function get_ip() {
+
+    $ipaddress = '';
+    if (getenv('HTTP_CLIENT_IP'))
+        $ipaddress = getenv('HTTP_CLIENT_IP');
+    else if(getenv('HTTP_X_FORWARDED'))
+        $ipaddress = getenv('HTTP_X_FORWARDED');
+    else if(getenv('HTTP_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_FORWARDED_FOR');
+    else if(getenv('HTTP_FORWARDED'))
+       $ipaddress = getenv('HTTP_FORWARDED');
+    else if(getenv('REMOTE_ADDR'))
+        $ipaddress = getenv('REMOTE_ADDR');
+    else
+        $ipaddress = 'Unknown IP';
+    return $ipaddress;
+}
+    
+    $user_ip = get_ip();
+    // log the ip address
+    error_log($user_ip);
+
+    // save ipaddress in the database table.
+    saveIP($user_ip);
+
+    function saveIP($user_ip)
+    {
+
+        $db_host = "localhost";
+        $db_user = "root";
+        $db_password = "";
+        $db_name= "minazy";
+
+        $today = date("Y-m-d");
+
+        // create connection
+        $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
+        // check connection
+        if (!$conn) {
+            die("connection failed". mysqli_connect_error());
+        }
+
+        $sql = "INSERT INTO userip(ipaddress,user_date) VALUES('$user_ip','$today')";
+        if (mysqli_query($conn,$sql)) {
+            echo "ip inserted";
+        }else{
+            echo "ip not inserted";
+        }
+
+        mysqli_close();
+
+
+
+
+
+
+    }
+
+
+        
+
+
+
 
         $db_host = "localhost";
         $db_user = "root";
