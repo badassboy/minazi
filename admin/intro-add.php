@@ -58,7 +58,7 @@ if(isset($_POST['in-prod'])){
  
 // Attempt insert query execution
 try{
-    $sql = "INSERT INTO intro (title, intro_img, description) VALUES ('$title', 'intro_img/".$file_name."', '$description')";    
+    $sql = "INSERT INTO intro (title, images, description) VALUES ('$title', 'intro_img/".$file_name."', '$description')";    
     $pdo->exec($sql);
     echo "Records inserted successfully.";
 } catch(PDOException $e){

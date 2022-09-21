@@ -46,7 +46,7 @@
                         <div class="d-flex">
                             <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-primary btn-square mr-2" href="#" target="_blank" onclick="window.location.href='http://facebook.com/minazy.gimbiya'"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="https://api.whatsapp.com/send?phone=+233554660985"><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://api.whatsapp.com/send?phone=+971521398226"><i class="fab fa-whatsapp"></i></a>
                             <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>

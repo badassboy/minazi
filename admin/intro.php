@@ -54,16 +54,16 @@
 									<tbody>
 										<?php
 										$i = 1;
-										$op->orderBy('p_id', 'desc');
-										$it = $op->get(products);
+										$op->orderBy('id', 'desc');
+										$it = $op->get('intro');
 										foreach($it as $prod) { ?>
 										<tr>
 											<td class="text-center"><?=$i++?></td>
 
 											
 
-											<td class="d-none d-xl-table-cell text-wrap"><?=$prod['p_name']?></td>
-											<td class="text-center"><?=$prod['p_old_price']?></td>
+											<td class="d-none d-xl-table-cell text-wrap"><?=$prod['title']?></td>
+											<td class="text-center"><?=$prod['description']?></td>
 											
 											<td>
 											<div class="dropdown">

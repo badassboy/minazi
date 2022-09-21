@@ -96,13 +96,12 @@ include_once 'inc/carter.php';
 
         $sql = "INSERT INTO userip(ipaddress,user_date) VALUES('$user_ip','$today')";
         if (mysqli_query($conn,$sql)) {
-            echo "ip inserted";
+            // echo "ip inserted";
         }else{
-            echo "ip not inserted";
+            // echo "ip not inserted";
         }
 
-        mysqli_close();
-
+        mysqli_close($conn);
 
 
 
