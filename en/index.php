@@ -79,15 +79,13 @@ include_once 'inc/carter.php';
 
     function saveIP($user_ip)
     {
+         // include_once "db.php";
 
-        // $db_host = "localhost";
-        // $db_user = "root";
-        // $db_password = "";
-        // $db_name= "minazy";
+        $db_host = "localhost";
+        $db_user = "minazy_ecommerce";
+        $db_password = "YXMxTm^PHvxp";
+        $db_name= "minazy_buy";
 
-        include_once "db.php";
-
-       
         // $db_host = "localhost";
         // $db_user = "root";
         // $db_password = "";
@@ -100,6 +98,15 @@ include_once 'inc/carter.php';
             die("connection failed". mysqli_connect_error());
         }
 
+
+
+       
+
+       
+        
+
+        
+        $today = date("Y-m-d");
         $sql = "INSERT INTO userip(ipaddress,user_date) VALUES('$user_ip','$today')";
         if (mysqli_query($conn,$sql)) {
             // echo "ip inserted";
@@ -114,13 +121,19 @@ include_once 'inc/carter.php';
 
 
     }
+    
+        $db_host = "localhost";
+        $db_user = "minazy_ecommerce";
+        $db_password = "YXMxTm^PHvxp";
+        $db_name= "minazy_buy";
 
-
-         // $db_host = "localhost";
+        // $db_host = "localhost";
         // $db_user = "root";
         // $db_password = "";
         // $db_name= "minazy";
-        include_once "db.php";
+
+        // include_once "db.php";
+
         $count_items=0;
 
         $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);

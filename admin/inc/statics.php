@@ -5,17 +5,24 @@ define('appName','Minazi.Store');
 // Setting up the time zone
 date_default_timezone_set('Africa/Accra');
 
-// Host Name
+// server
 define('hostName', 'localhost');
+define('userName', 'minazy_ecommerce');
+define('userPass', 'YXMxTm^PHvxp');
+define('hostDb', 'minazy_buy');
+
+
+// Host Name
+// define('hostName', 'localhost');
 
 // User Name
-define('userName', 'root');
+// define('userName', 'root');
 
 // User Password
-define('userPass', '');
+// define('userPass', '');
 
 // Host Database
-define('hostDb', 'minazy');
+// define('hostDb', 'minazy');
 
 function url(){
     return sprintf(
