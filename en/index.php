@@ -80,14 +80,20 @@ include_once 'inc/carter.php';
     function saveIP($user_ip)
     {
 
+<<<<<<< HEAD
         // $db_host = "localhost";
         // $db_user = "root";
         // $db_password = "";
         // $db_name= "minazy";
 
         include_once "db.php";
-
-        $today = date("Y-m-d");
+=======
+       
+        $db_host = "localhost";
+        $db_user = "root";
+        $db_password = "";
+        $db_name= "minazy";
+>>>>>>> 8ecc8a7abed2a2f6d7c49348d5082958594cd913
 
         // create connection
         $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
