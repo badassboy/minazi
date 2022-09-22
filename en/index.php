@@ -82,10 +82,9 @@ include_once 'inc/carter.php';
 
        
         $db_host = "localhost";
-        $db_user = "minazy_ecommerce";
-        $db_password = "YXMxTm^PHvxp";
-        $db_name= "minazy_buy";
-        $today = date("Y-m-d");
+        $db_user = "root";
+        $db_password = "";
+        $db_name= "minazy";
 
         // create connection
         $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
@@ -116,9 +115,9 @@ include_once 'inc/carter.php';
 
 
         $db_host = "localhost";
-        $db_user = "minazy_ecommerce";
-        $db_password = "YXMxTm^PHvxp";
-        $db_name= "minazy_buy";
+        $db_user = "root";
+        $db_password = "";
+        $db_name= "minazy";
         $count_items=0;
 
         $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
