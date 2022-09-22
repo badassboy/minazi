@@ -80,11 +80,11 @@ include_once 'inc/carter.php';
     function saveIP($user_ip)
     {
 
+       
         $db_host = "localhost";
-        $db_user = "root";
-        $db_password = "";
-        $db_name= "minazy";
-
+        $db_user = "minazy_ecommerce";
+        $db_password = "YXMxTm^PHvxp";
+        $db_name= "minazy_buy";
         $today = date("Y-m-d");
 
         // create connection
@@ -116,9 +116,9 @@ include_once 'inc/carter.php';
 
 
         $db_host = "localhost";
-        $db_user = "root";
-        $db_password = "";
-        $db_name= "minazy";
+        $db_user = "minazy_ecommerce";
+        $db_password = "YXMxTm^PHvxp";
+        $db_name= "minazy_buy";
         $count_items=0;
 
         $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
