@@ -6,23 +6,23 @@ define('appName','Minazi.Store');
 date_default_timezone_set('Africa/Accra');
 
 // server
-define('hostName', 'localhost');
-define('userName', 'minazy_ecommerce');
-define('userPass', 'YXMxTm^PHvxp');
-define('hostDb', 'minazy_buy');
+// define('hostName', 'localhost');
+// define('userName', 'minazy_ecommerce');
+// define('userPass', 'YXMxTm^PHvxp');
+// define('hostDb', 'minazy_buy');
 
 
 // Host Name
-// define('hostName', 'localhost');
+define('hostName', 'localhost');
 
 // User Name
-// define('userName', 'root');
+define('userName', 'root');
 
 // User Password
-// define('userPass', '');
+define('userPass', '');
 
 // Host Database
-// define('hostDb', 'minazy');
+define('hostDb', 'minazy');
 
 function url(){
     return sprintf(
@@ -32,6 +32,11 @@ function url(){
       $_SERVER['REQUEST_URI']
     );
 }
+
+// server base url
+// define('baseUrl', url());
+// define('base', 'https://minazy.com/en/');
+// define('admin_base', 'https://minazy.com/admin/');
 
 // Base URL
 define('baseUrl', url());

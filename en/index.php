@@ -1,18 +1,15 @@
 <?php include_once 'inc/functions.php';
 include_once 'inc/carter.php'; 
- ?><!DOCTYPE html>
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php
 
+include_once 'views/metadata.php'
 
-
-     include_once 'views/metadata.php'
-
-
-
-      ?>
+?>
 
     <?php include_once 'views/links.php' ?>
 </head>
@@ -81,15 +78,17 @@ include_once 'inc/carter.php';
     {
          // include_once "db.php";
 
-        $db_host = "localhost";
-        $db_user = "minazy_ecommerce";
-        $db_password = "YXMxTm^PHvxp";
-        $db_name= "minazy_buy";
+       
+        // server details
+        //  $db_host = "localhost";
+        // $db_user = "minazy_ecommerce";
+        // $db_password = "38PI=Fo[a%sh";
+        // $db_name= "minazy_buy";
 
-        // $db_host = "localhost";
-        // $db_user = "root";
-        // $db_password = "";
-        // $db_name= "minazy";
+        $db_host = "localhost";
+        $db_user = "root";
+        $db_password = "";
+        $db_name= "minazy";
 
         // create connection
         $conn = mysqli_connect($db_host,$db_user,$db_password,$db_name);
@@ -122,15 +121,16 @@ include_once 'inc/carter.php';
 
     }
     
-        $db_host = "localhost";
-        $db_user = "minazy_ecommerce";
-        $db_password = "YXMxTm^PHvxp";
-        $db_name= "minazy_buy";
+      // server details
+    // $db_host = "localhost";
+    // $db_user = "minazy_ecommerce";
+    // $db_password = "38PI=Fo[a%sh";
+    // $db_name= "minazy_buy";
 
-        // $db_host = "localhost";
-        // $db_user = "root";
-        // $db_password = "";
-        // $db_name= "minazy";
+        $db_host = "localhost";
+        $db_user = "root";
+        $db_password = "";
+        $db_name= "minazy";
 
         // include_once "db.php";
 
